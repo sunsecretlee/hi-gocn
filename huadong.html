@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华东旅游 | 江南水乡5-6日游 | hi-gocn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-dark: #134b5f;
+            --secondary: #c84b31;
+            --accent: #f4a261;
+            --gold: #d4a574;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --gradient-1: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            --gradient-2: linear-gradient(135deg, #c84b31 0%, #e76f51 100%);
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px; height: 45px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo-tag {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--gradient-1);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-cta::after { display: none !important; }
+
+        /* Hero */
+        .hero {
+            height: 70vh;
+            min-height: 500px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,95,122,0.85) 0%, rgba(212,165,116,0.75) 100%),
+                        url('https://images.unsplash.com/photo-1537531383496-f4749b8032cf?w=1920&q=80') center/cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 0 30px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5vw, 60px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 15px;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 17px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .highlight-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .highlight-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Itinerary */
+        .itinerary-section {
+            background: var(--light);
+            padding: 80px 30px;
+        }
+
+        .itinerary-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 5px;
+            background: var(--gradient-1);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .day-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .day-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .day-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .day-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .day-content {
+            padding-left: 80px;
+        }
+
+        .day-content h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .day-content p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .day-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .day-content ul li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--text);
+            font-size: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .day-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .day-content ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 80px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-card h3 i {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 15px;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .info-item-value {
+            color: var(--dark);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+            color: var(--text);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .info-list li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 100px 30px;
+            text-align: center;
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-line {
+            background: #06C755;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-line:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6,199,85,0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 15px;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f0f1a;
+            color: white;
+            padding: 60px 30px 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand .logo-text { color: white; font-size: 24px; }
+        .footer-brand .logo-icon { background: white; color: var(--primary); }
+        .footer-desc { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.8; margin: 20px 0; }
+        .footer-social { display: flex; gap: 12px; }
+        .footer-social a {
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .footer-social a:hover { background: var(--primary); }
+        .footer-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: white; }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        .footer-contact-item i { color: var(--accent); margin-top: 3px; }
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 40px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+        }
+
+        /* Float Line */
+        .float-line {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #06C755;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(6,199,85,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        .float-line:hover { transform: scale(1.1); }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(6,199,85,0.4); }
+            50% { box-shadow: 0 8px 35px rgba(6,199,85,0.6); }
+        }
+        .float-line-tooltip {
+            position: absolute;
+            right: 75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .float-line:hover .float-line-tooltip { opacity: 1; visibility: visible; right: 80px; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { min-height: 400px; }
+            .day-content { padding-left: 0; }
+            .info-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .btn-white { margin-left: 0; margin-top: 15px; }
+        }
+    </style>
+    <base href="./">
+    </head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">
+                <div class="logo-icon">hi</div>
+                <div>
+                    <div class="logo-text">hi-gocn</div>
+                    <div class="logo-tag">Discover China</div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="./index.html">首页</a>
+                <a href="./beijing.html">北京</a>
+                <a href="./harbin.html">哈尔滨</a>
+                <a href="./xinjiang.html">新疆</a>
+                <a href="./huadong.html">华东</a>
+                <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" class="nav-cta"><i class="fab fa-line"></i> 立即咨询</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">✦ 上有天堂 · 下有苏杭</div>
+            <h1>华东 · 江南水乡</h1>
+            <p>上海、杭州、苏州、乌镇，领略江南水乡的婉约与繁华，感受千年文化的沉淀。</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-calendar"></i> 4-6天</span>
+                <span><i class="fas fa-users"></i> 高端定制</span>
+                <span><i class="fas fa-water"></i> 江南风情</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-label">Highlights</div>
+            <h2 class="section-title">行程亮点</h2>
+            <p class="section-subtitle">私人管家 · 私人导游 · 专车接送 · 透明价格</p>
+        </div>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-city"></i></div>
+                <h3>魔都上海</h3>
+                <p>外滩万国建筑群、陆家嘴摩天大楼、豫园城隍庙。感受国际大都市的繁华与历史的交融。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-leaf"></i></div>
+                <h3>杭州西湖</h3>
+                <p>"欲把西湖比西子，淡妆浓抹总相宜"。断桥残雪、雷峰塔、灵隐寺，品味人间天堂的诗意。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-torii-gate"></i></div>
+                <h3>苏州园林</h3>
+                <p>拙政园、留园、虎丘，中国园林艺术的巅峰。"姑苏城外寒山寺，夜半钟声到客船"。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-water"></i></div>
+                <h3>乌镇水乡</h3>
+                <p>千年古镇乌镇，小桥流水人家。西栅夜景、东栅民俗，体验最原汁原味的江南水乡。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="itinerary-section">
+        <div class="itinerary-container">
+            <div class="section-header">
+                <div class="section-label">Itinerary</div>
+                <h2 class="section-title">江浙沪高端定制 5日游</h2>
+                <p class="section-subtitle">上海 | 杭州 | 苏州 | 乌镇 · 纯玩高端定制</p>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D1</div>
+                    <div>
+                        <div class="day-title">全国各地 → 上海</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 不含餐</span>
+                            <span><i class="fas fa-bed"></i> 上海五钻酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>抵达上海，24小时专车接机/接站。入住外滩或陆家嘴五钻酒店。晚上可自由漫步外滩，欣赏黄浦江两岸璀璨夜景。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D2</div>
+                    <div>
+                        <div class="day-title">上海深度游 → 杭州</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 含早</span>
+                            <span><i class="fas fa-bed"></i> 杭州五钻酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-landmark"></i> 上海经典游览</h4>
+                    <p>外滩万国建筑群 → 南京路步行街 → 豫园及城隍庙 → 陆家嘴金融区（外观东方明珠、上海中心）。</p>
+
+                    <h4><i class="fas fa-palette"></i> 田子坊 & 新天地</h4>
+                    <p>探访田子坊艺术街区，感受石库门里的创意文化。新天地时尚商圈，体验上海的海派生活方式。</p>
+
+                    <h4><i class="fas fa-train"></i> 前往杭州</h4>
+                    <p>乘坐高铁前往杭州（约1小时），入住西湖边五钻酒店。晚上可漫步西湖音乐喷泉。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D3</div>
+                    <div>
+                        <div class="day-title">杭州西湖 → 灵隐寺 → 龙井茶园</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 含早</span>
+                            <span><i class="fas fa-bed"></i> 杭州五钻酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-water"></i> 西湖全景（约3小时）</h4>
+                    <p>乘船游西湖，登三潭印月岛。漫步苏堤、白堤，游览花港观鱼、曲院风荷。断桥残雪、雷峰塔，品味西湖十景。</p>
+
+                    <h4><i class="fas fa-pray"></i> 灵隐寺 & 飞来峰</h4>
+                    <p>探访千年古刹灵隐寺，飞来峰石刻造像。在香火缭绕中感受禅意，品尝素斋。</p>
+
+                    <h4><i class="fas fa-mug-hot"></i> 龙井茶园</h4>
+                    <p>前往梅家坞龙井茶园，亲手采摘龙井茶叶，体验炒茶工艺。品一杯明前龙井，看茶园梯田层叠。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D4</div>
+                    <div>
+                        <div class="day-title">杭州 → 乌镇 → 苏州</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 含早</span>
+                            <span><i class="fas fa-bed"></i> 苏州五钻酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-water"></i> 乌镇西栅（约3小时）</h4>
+                    <p>千年古镇乌镇，小桥流水人家。游览西栅景区：茅盾故居、木心美术馆、水上戏台。乘坐乌篷船，穿行于古桥之间。</p>
+
+                    <h4><i class="fas fa-moon"></i> 西栅夜景</h4>
+                    <p>西栅夜景是乌镇最美的时刻。灯笼高挂，倒影摇曳，仿佛穿越回千年前的江南水乡。</p>
+
+                    <h4><i class="fas fa-car"></i> 前往苏州</h4>
+                    <p>前往苏州，入住古城五钻酒店。晚上可漫步平江路历史街区，听一曲评弹，品苏州小吃。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D5</div>
+                    <div>
+                        <div class="day-title">苏州园林 → 返程</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 含早</span>
+                            <span><i class="fas fa-plane"></i> 温馨的家</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-torii-gate"></i> 拙政园（约2小时）</h4>
+                    <p>中国四大名园之首拙政园，以水为中心，山水萦绕，厅榭精美。一步一景，处处入画，感受江南园林的精致与意境。</p>
+
+                    <h4><i class="fas fa-mountain"></i> 虎丘（约1.5小时）</h4>
+                    <p>"到苏州不游虎丘，乃憾事也"。虎丘塔、剑池、千人石，聆听吴王阖闾的传奇故事。</p>
+
+                    <h4><i class="fas fa-shopping-bag"></i> 山塘街</h4>
+                    <p>漫步山塘街，"七里山塘到虎丘"。品尝苏式汤面、蟹壳黄、海棠糕，购买苏绣、碧螺春等特产。</p>
+                    <p>根据航班/高铁时间送站，结束愉快的江南之旅。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-concierge-bell"></i> 服务标准</h3>
+                <div class="info-item">
+                    <span class="info-item-label">用车</span>
+                    <span class="info-item-value">5座私家车/7座商务车（专车专用）</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">住宿</span>
+                    <span class="info-item-value">携程五钻酒店（全程不挪窝）</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">导游</span>
+                    <span class="info-item-value">金牌导游深度讲解</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">门票</span>
+                    <span class="info-item-value">行程所列景点首道门票</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">特色</span>
+                    <span class="info-item-value">西湖游船、乌镇乌篷船、龙井品茶</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-star"></i> 高端定制服务</h3>
+                <ul class="info-list">
+                    <li>私人管家全程服务，24小时响应</li>
+                    <li>私人导游深度讲解，拒绝走马观花</li>
+                    <li>专车接送，不拼车不等待</li>
+                    <li>透明价格，无隐形消费</li>
+                    <li>可根据需求调整行程、酒店、餐厅</li>
+                    <li>提供签证咨询、机票预订等增值服务</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>品味江南，从 hi-gocn 开始</h2>
+        <p>高端定制小团，私人管家服务，让您尽享江南诗意</p>
+        <div>
+            <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" class="btn-line"><i class="fab fa-line"></i> Line 咨询预订</a>
+            <a href="mailto:higocn.cs@gmail.com" class="btn-white"><i class="fas fa-envelope"></i> 邮件咨询</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="./index.html" class="logo">
+                    <div class="logo-icon">hi</div>
+                    <div class="logo-text">hi-gocn</div>
+                </a>
+                <p class="footer-desc">专注为全球游客打造专属中国旅行体验，提供定制化大包、小包团及特色线路。</p>
+                <div class="footer-social">
+                    <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank"><i class="fab fa-line"></i></a>
+                    <a href="https://wa.me/8613647332087" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:higocn.cs@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title">热门目的地</h4>
+                <ul class="footer-links">
+                    <li><a href="./beijing.html">北京旅游</a></li>
+                    <li><a href="./harbin.html">哈尔滨旅游</a></li>
+                    <li><a href="./xinjiang.html">新疆旅游</a></li>
+                    <li><a href="./huadong.html">华东旅游</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">服务项目</h4>
+                <ul class="footer-links">
+                    <li><a href="./index.html">定制旅行</a></li>
+                    <li><a href="./index.html">小包团</a></li>
+                    <li><a href="./index.html">医疗旅游</a></li>
+                    <li><a href="./index.html">留学服务</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">联系我们</h4>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>深圳市南山区科技园南区<br>高新南一道008号创维大厦</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+86 136 4733 2087</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>higocn.cs@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 hi-gocn. All rights reserved.</span>
+            <span>Travel Freely, Unfold China's Secrets</span>
+        </div>
+    </footer>
+
+    <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" class="float-line">
+        <i class="fab fa-line"></i>
+        <span class="float-line-tooltip">Line 咨询客服</span>
+    </a>
+</body>
+</html>

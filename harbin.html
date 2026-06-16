@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈尔滨旅游 | 冰雪奇缘5-6日游 | hi-gocn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-dark: #134b5f;
+            --secondary: #c84b31;
+            --accent: #f4a261;
+            --gold: #d4a574;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --gradient-1: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            --gradient-2: linear-gradient(135deg, #c84b31 0%, #e76f51 100%);
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px; height: 45px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo-tag {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--gradient-1);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-cta::after { display: none !important; }
+
+        /* Hero */
+        .hero {
+            height: 70vh;
+            min-height: 500px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,95,122,0.85) 0%, rgba(26,26,46,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1548266652-99cf27701ced?w=1920&q=80') center/cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 0 30px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5vw, 60px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 15px;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 17px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Route Tabs */
+        .route-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .route-tab {
+            padding: 14px 35px;
+            border-radius: 50px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .route-tab.active, .route-tab:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .highlight-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .highlight-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Itinerary */
+        .itinerary-section {
+            background: var(--light);
+            padding: 80px 30px;
+        }
+
+        .itinerary-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 5px;
+            background: var(--gradient-1);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .day-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .day-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .day-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .day-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .day-content {
+            padding-left: 80px;
+        }
+
+        .day-content h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .day-content p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .day-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .day-content ul li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--text);
+            font-size: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .day-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .day-content ul li:last-child {
+            border-bottom: none;
+        }
+
+        .route-badge {
+            display: inline-block;
+            background: var(--gradient-2);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 15px;
+            vertical-align: middle;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 80px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-card h3 i {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 15px;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .info-item-value {
+            color: var(--dark);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+            color: var(--text);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .info-list li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 100px 30px;
+            text-align: center;
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-line {
+            background: #06C755;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-line:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6,199,85,0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 15px;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f0f1a;
+            color: white;
+            padding: 60px 30px 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand .logo-text { color: white; font-size: 24px; }
+        .footer-brand .logo-icon { background: white; color: var(--primary); }
+        .footer-desc { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.8; margin: 20px 0; }
+        .footer-social { display: flex; gap: 12px; }
+        .footer-social a {
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .footer-social a:hover { background: var(--primary); }
+        .footer-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: white; }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        .footer-contact-item i { color: var(--accent); margin-top: 3px; }
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 40px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+        }
+
+        /* Float Line */
+        .float-line {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #06C755;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(6,199,85,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        .float-line:hover { transform: scale(1.1); }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(6,199,85,0.4); }
+            50% { box-shadow: 0 8px 35px rgba(6,199,85,0.6); }
+        }
+        .float-line-tooltip {
+            position: absolute;
+            right: 75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .float-line:hover .float-line-tooltip { opacity: 1; visibility: visible; right: 80px; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { min-height: 400px; }
+            .day-content { padding-left: 0; }
+            .info-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .btn-white { margin-left: 0; margin-top: 15px; }
+        }
+    </style>
+    <base href="./">
+    </head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">
+                <div class="logo-icon">hi</div>
+                <div>
+                    <div class="logo-text">hi-gocn</div>
+                    <div class="logo-tag">Discover China</div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="./index.html">首页</a>
+                <a href="./beijing.html">北京</a>
+                <a href="./harbin.html">哈尔滨</a>
+                <a href="./xinjiang.html">新疆</a>
+                <a href="./huadong.html">华东</a>
+                <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" class="nav-cta"><i class="fab fa-line"></i> 立即咨询</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">✦ 冰雪童话世界</div>
+            <h1>哈尔滨 · 冰雪奇缘</h1>
+            <p>东方莫斯科，冰雪童话世界。雪乡、亚布力、长白山，体验极致北国风光。</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-calendar"></i> 5-6天</span>
+                <span><i class="fas fa-users"></i> 纯玩小团</span>
+                <span><i class="fas fa-snowflake"></i> 冰雪体验</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-label">Routes</div>
+            <h2 class="section-title">精选路线</h2>
+            <p class="section-subtitle">两种行程方案，满足不同需求</p>
+        </div>
+        <div class="route-tabs">
+            <a href="#route5" class="route-tab active">漫雪时光 5天4晚</a>
+            <a href="#route6" class="route-tab">雾凇奇缘 6天5晚</a>
+        </div>
+
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-skiing"></i></div>
+                <h3>3小时滑雪</h3>
+                <p>亚布力初级滑雪场，含雪鞋、雪板、雪仗，尽情尽兴玩。专业教练指导，零基础也能体验滑雪乐趣。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-home"></i></div>
+                <h3>雪乡民宿</h3>
+                <p>入住雪乡2-4人民宿，体验东北火炕的温暖。雪韵大街、棒槌山观景台，感受童话般的雪国世界。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-paw"></i></div>
+                <h3>东北虎林园</h3>
+                <p>横道河子东北虎林园，近距离观赏东北虎。冬捕表演、马拉爬犁，体验纯正的东北民俗。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fas fa-mountain"></i></div>
+                <h3>长白山天池</h3>
+                <p>6天行程特别包含长白山景区，雾凇漂流、魔界漂流，一览中国最美火山湖泊的壮丽景色。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="itinerary-section" id="route5">
+        <div class="itinerary-container">
+            <div class="section-header">
+                <div class="section-label">5-Day Itinerary</div>
+                <h2 class="section-title">畅游漫雪时光 <span class="route-badge">5天4晚</span></h2>
+                <p class="section-subtitle">哈尔滨 | 亚布力 | 雪乡 · 纯玩0购物</p>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D1</div>
+                    <div>
+                        <div class="day-title">温馨家园 → 冰城哈尔滨</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 不含餐</span>
+                            <span><i class="fas fa-bed"></i> 哈尔滨携程四钻酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>全国各地出发，抵达冰城哈尔滨。24小时专车接机，安排入住哈尔滨携程四钻酒店。晚上可自行前往中央大街、索菲亚教堂，感受哈尔滨的俄式风情。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D2</div>
+                    <div>
+                        <div class="day-title">哈尔滨 → 亚雪公路 → 雪乡</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-bed"></i> 雪乡2-4人民宿</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-road"></i> 亚雪公路</h4>
+                    <p>穿越亚雪公路，沿途欣赏雾凇长廊的绝美景色。银装素裹的林海雪原，宛如童话世界。</p>
+
+                    <h4><i class="fas fa-image"></i> 冰雪十里画廊</h4>
+                    <p>游览冰雪十里画廊，欣赏大自然鬼斧神工的雪雕艺术。雪地摩托自驾体验，感受速度与激情。</p>
+
+                    <h4><i class="fas fa-street-view"></i> 雪韵大街 & 千人蹦迪</h4>
+                    <p>漫步雪韵大街，感受雪乡的独特魅力。晚上参加秧歌巡游、千人蹦迪，体验东北民俗的热情。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D3</div>
+                    <div>
+                        <div class="day-title">雪乡 → 横道河子 → 亚布力</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-bed"></i> 亚布力民宿/二浪河民宿</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-paw"></i> 横道河子东北虎林园</h4>
+                    <p>参观横道河子东北虎林园，近距离观赏东北虎的雄姿。这里是世界最大的东北虎人工饲养繁育基地。</p>
+
+                    <h4><i class="fas fa-train"></i> 中东铁路机车库</h4>
+                    <p>探访中东铁路机车库，了解百年铁路历史。这座扇形机车库是中东铁路的标志性建筑。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D4</div>
+                    <div>
+                        <div class="day-title">亚布力滑雪 → 哈尔滨</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-bed"></i> 哈尔滨携程精品酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-skiing"></i> 亚布力滑雪3小时</h4>
+                    <p>亚布力初级滑雪场，3小时尽情尽兴玩。含雪鞋、雪板、雪仗，专业雪道适合各级滑雪爱好者。</p>
+
+                    <h4><i class="fas fa-horse"></i> 马拉爬犁</h4>
+                    <p>体验传统马拉爬犁，在雪地上飞驰。观看冬捕表演，感受东北渔民的智慧与勇气。</p>
+
+                    <h4><i class="fas fa-fish"></i> 品尝冷水鱼汤</h4>
+                    <p>品尝新鲜冷水鱼汤，体验冰爬犁、冰上自行车、抽冰尜等冰上娱乐项目。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D5</div>
+                    <div>
+                        <div class="day-title">哈尔滨市区 → 返程</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-plane"></i> 温馨的家</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-landmark"></i> 哈尔滨市区游览</h4>
+                    <p>网红滨江铁路桥 → 中央大街 → 防洪纪念塔 → 斯大林公园 → 索菲亚教堂。感受哈尔滨的历史底蕴与俄式风情。</p>
+                    <p>根据航班时间送机，结束愉快的冰雪之旅。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="itinerary-section" id="route6">
+        <div class="itinerary-container">
+            <div class="section-header">
+                <div class="section-label">6-Day Itinerary</div>
+                <h2 class="section-title">畅游雾凇奇缘 <span class="route-badge">6天5晚</span></h2>
+                <p class="section-subtitle">哈尔滨 | 亚布力 | 雪乡 | 长白山 | 延吉 · 纯玩0购物</p>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D1</div>
+                    <div>
+                        <div class="day-title">全国各地 → 哈尔滨</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 今日不含</span>
+                            <span><i class="fas fa-bed"></i> 哈尔滨四钻酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>全国各地出发，抵达哈尔滨。24小时接机，入住哈尔滨四钻酒店。晚上可自由游览中央大街，品尝马迭尔冰棍、红肠等东北美食。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D2</div>
+                    <div>
+                        <div class="day-title">哈尔滨 → 亚布力滑雪度假区</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-bed"></i> 亚布力民宿/二浪河民宿</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-skiing"></i> 亚布力滑雪度假区</h4>
+                    <p>亚布力初级滑雪场3小时滑雪（含雪鞋、雪板、雪仗），尽情体验滑雪乐趣。</p>
+
+                    <h4><i class="fas fa-gift"></i> 赠送项目</h4>
+                    <ul>
+                        <li>马拉爬犁体验</li>
+                        <li>观看冬捕表演</li>
+                        <li>品尝冷水鱼汤</li>
+                        <li>体验冰爬犁、冰上自行车</li>
+                        <li>抽冰尜、驯鹿园</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D3</div>
+                    <div>
+                        <div class="day-title">亚布力 → 雪乡</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-bed"></i> 雪乡2-4人民宿</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-road"></i> 亚雪公路</h4>
+                    <p>穿越亚雪公路，游览冰雪十里画廊，欣赏沿途雾凇美景。</p>
+
+                    <h4><i class="fas fa-street-view"></i> 雪韵大街 & 棒槌山</h4>
+                    <p>漫步雪韵大街，登棒槌山观景台俯瞰雪乡全景。晚上参加秧歌巡游/千人蹦迪。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D4</div>
+                    <div>
+                        <div class="day-title">雪乡 → 镜泊湖 → 长白山</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-bed"></i> 二道白河</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-water"></i> 镜泊湖南湖口</h4>
+                    <p>游览镜泊湖南湖口，欣赏中国最大火山堰塞湖的冬日美景。冰瀑、雾凇，宛如仙境。</p>
+
+                    <h4><i class="fas fa-tree"></i> 长白山美人松廊桥公园</h4>
+                    <p>漫步美人松廊桥公园，欣赏长白山特有的美人松。入住二道白河，为明日长白山之旅做准备。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D5</div>
+                    <div>
+                        <div class="day-title">二道白河 → 长白山 → 延吉</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-bed"></i> 延吉精品酒店</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-ship"></i> 雾凇漂流</h4>
+                    <p>清晨体验雾凇漂流，在晨雾中顺流而下，两岸雾凇如画，宛如仙境。</p>
+
+                    <h4><i class="fas fa-mountain"></i> 长白山景区</h4>
+                    <p>游览长白山景区，登顶天池，欣赏中国最美火山湖泊。长白瀑布、温泉群，感受大自然的鬼斧神工。</p>
+
+                    <h4><i class="fas fa-city"></i> 延吉</h4>
+                    <p>前往延吉，入住精品酒店。晚上可品尝正宗朝鲜族美食，感受边境小城的独特魅力。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D6</div>
+                    <div>
+                        <div class="day-title">延吉 → 朝鲜民俗园 → 返程</div>
+                        <div class="day-meta">
+                            <span><i class="fas fa-utensils"></i> 酒店含早</span>
+                            <span><i class="fas fa-plane"></i> 温馨的家</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <h4><i class="fas fa-hat-cowboy"></i> 朝鲜民俗园</h4>
+                    <p>游览朝鲜民俗园，体验朝鲜族传统服饰、民居、饮食文化。可租赁朝鲜族服装拍照留念。</p>
+                    <p>根据航班/高铁时间送站，结束愉快的东北冰雪之旅。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-gift"></i> 奢享体验</h3>
+                <div class="info-item">
+                    <span class="info-item-label">滑雪</span>
+                    <span class="info-item-value">亚布力初级滑雪场3小时</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">赠送</span>
+                    <span class="info-item-value">马拉爬犁、冬捕表演</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">体验</span>
+                    <span class="info-item-value">冰爬犁、冰上自行车、抽冰尜</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">特色</span>
+                    <span class="info-item-value">驯鹿园、雪地摩托</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">民俗</span>
+                    <span class="info-item-value">雪地围炉煮茶+东北大花袄</span>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-concierge-bell"></i> 服务标准</h3>
+                <div class="info-item">
+                    <span class="info-item-label">用车</span>
+                    <span class="info-item-value">2-4人5座车 / 4人以上按人数安排</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">住宿</span>
+                    <span class="info-item-value">携程四钻/精品酒店+特色民宿</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">导游</span>
+                    <span class="info-item-value">本地司兼导，金牌司机带队</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">保险</span>
+                    <span class="info-item-value">旅行社责任险全程护航</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">接送</span>
+                    <span class="info-item-value">24小时接送服务</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>开启您的冰雪奇缘之旅</h2>
+        <p>纯玩0购物小团，VIP高端定制，专车专用</p>
+        <div>
+            <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" class="btn-line"><i class="fab fa-line"></i> Line 咨询预订</a>
+            <a href="mailto:higocn.cs@gmail.com" class="btn-white"><i class="fas fa-envelope"></i> 邮件咨询</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="./index.html" class="logo">
+                    <div class="logo-icon">hi</div>
+                    <div class="logo-text">hi-gocn</div>
+                </a>
+                <p class="footer-desc">专注为全球游客打造专属中国旅行体验，提供定制化大包、小包团及特色线路。</p>
+                <div class="footer-social">
+                    <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank"><i class="fab fa-line"></i></a>
+                    <a href="https://wa.me/8613647332087" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:higocn.cs@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title">热门目的地</h4>
+                <ul class="footer-links">
+                    <li><a href="./beijing.html">北京旅游</a></li>
+                    <li><a href="./harbin.html">哈尔滨旅游</a></li>
+                    <li><a href="./xinjiang.html">新疆旅游</a></li>
+                    <li><a href="./huadong.html">华东旅游</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">服务项目</h4>
+                <ul class="footer-links">
+                    <li><a href="./index.html">定制旅行</a></li>
+                    <li><a href="./index.html">小包团</a></li>
+                    <li><a href="./index.html">医疗旅游</a></li>
+                    <li><a href="./index.html">留学服务</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">联系我们</h4>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>深圳市南山区科技园南区<br>高新南一道008号创维大厦</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+86 136 4733 2087</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>higocn.cs@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 hi-gocn. All rights reserved.</span>
+            <span>Travel Freely, Unfold China's Secrets</span>
+        </div>
+    </footer>
+
+    <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" class="float-line">
+        <i class="fab fa-line"></i>
+        <span class="float-line-tooltip">Line 咨询客服</span>
+    </a>
+</body>
+</html>
