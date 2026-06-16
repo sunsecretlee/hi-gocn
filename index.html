@@ -1,5 +1,4 @@
-
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -23,16 +22,16 @@ html_content = '''<!DOCTYPE html>
             --shadow: 0 10px 40px rgba(0,0,0,0.1);
             --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'Noto Sans SC', sans-serif;
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         /* Navigation */
         .navbar {
             position: fixed;
@@ -43,7 +42,7 @@ html_content = '''<!DOCTYPE html>
             border-bottom: 1px solid rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
-        
+
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -53,14 +52,14 @@ html_content = '''<!DOCTYPE html>
             align-items: center;
             height: 80px;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
         }
-        
+
         .logo-icon {
             width: 45px; height: 45px;
             background: var(--gradient-1);
@@ -72,14 +71,14 @@ html_content = '''<!DOCTYPE html>
             font-size: 20px;
             font-weight: 900;
         }
-        
+
         .logo-text {
             font-size: 26px;
             font-weight: 900;
             color: var(--primary);
             letter-spacing: -1px;
         }
-        
+
         .logo-tag {
             font-size: 11px;
             color: var(--text-light);
@@ -87,13 +86,13 @@ html_content = '''<!DOCTYPE html>
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 40px;
             align-items: center;
         }
-        
+
         .nav-links a {
             text-decoration: none;
             color: var(--text);
@@ -102,7 +101,7 @@ html_content = '''<!DOCTYPE html>
             position: relative;
             transition: color 0.3s;
         }
-        
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -111,10 +110,10 @@ html_content = '''<!DOCTYPE html>
             background: var(--primary);
             transition: width 0.3s;
         }
-        
+
         .nav-links a:hover { color: var(--primary); }
         .nav-links a:hover::after { width: 100%; }
-        
+
         .nav-cta {
             background: var(--gradient-1);
             color: white !important;
@@ -123,14 +122,14 @@ html_content = '''<!DOCTYPE html>
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .nav-cta:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
-        
+
         .nav-cta::after { display: none !important; }
-        
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -142,14 +141,14 @@ html_content = '''<!DOCTYPE html>
             overflow: hidden;
             margin-top: 80px;
         }
-        
+
         .hero-bg {
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, rgba(26,95,122,0.85) 0%, rgba(21,152,149,0.75) 50%, rgba(212,165,116,0.6) 100%),
                         url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1920&q=80') center/cover;
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -158,7 +157,7 @@ html_content = '''<!DOCTYPE html>
             max-width: 900px;
             padding: 0 30px;
         }
-        
+
         .hero-badge {
             display: inline-block;
             background: rgba(255,255,255,0.15);
@@ -172,7 +171,7 @@ html_content = '''<!DOCTYPE html>
             margin-bottom: 30px;
             border: 1px solid rgba(255,255,255,0.2);
         }
-        
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(40px, 6vw, 72px);
@@ -181,7 +180,7 @@ html_content = '''<!DOCTYPE html>
             margin-bottom: 20px;
             text-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
-        
+
         .hero h1 span {
             display: block;
             font-size: 0.5em;
@@ -191,7 +190,7 @@ html_content = '''<!DOCTYPE html>
             margin-top: 15px;
             opacity: 0.9;
         }
-        
+
         .hero-slogan {
             font-size: 18px;
             font-weight: 300;
@@ -199,14 +198,14 @@ html_content = '''<!DOCTYPE html>
             margin-bottom: 40px;
             opacity: 0.9;
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .btn-primary {
             background: white;
             color: var(--primary);
@@ -221,12 +220,12 @@ html_content = '''<!DOCTYPE html>
             gap: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
-        
+
         .btn-outline {
             background: transparent;
             color: white;
@@ -241,13 +240,13 @@ html_content = '''<!DOCTYPE html>
             align-items: center;
             gap: 10px;
         }
-        
+
         .btn-outline:hover {
             background: white;
             color: var(--primary);
             border-color: white;
         }
-        
+
         /* Floating Stats */
         .hero-stats {
             position: absolute;
@@ -263,36 +262,36 @@ html_content = '''<!DOCTYPE html>
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.15);
         }
-        
+
         .stat-item {
             text-align: center;
             color: white;
         }
-        
+
         .stat-number {
             font-size: 32px;
             font-weight: 900;
             display: block;
         }
-        
+
         .stat-label {
             font-size: 13px;
             opacity: 0.8;
             letter-spacing: 1px;
         }
-        
+
         /* Destinations Section */
         .section {
             padding: 100px 30px;
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .section-label {
             color: var(--secondary);
             font-weight: 700;
@@ -301,28 +300,28 @@ html_content = '''<!DOCTYPE html>
             text-transform: uppercase;
             margin-bottom: 15px;
         }
-        
+
         .section-title {
             font-size: clamp(28px, 4vw, 48px);
             font-weight: 900;
             color: var(--dark);
             margin-bottom: 20px;
         }
-        
+
         .section-subtitle {
             color: var(--text-light);
             font-size: 18px;
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         /* Destination Cards */
         .destinations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .dest-card {
             position: relative;
             border-radius: 24px;
@@ -334,23 +333,23 @@ html_content = '''<!DOCTYPE html>
             text-decoration: none;
             display: block;
         }
-        
+
         .dest-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .dest-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s;
         }
-        
+
         .dest-card:hover img {
             transform: scale(1.1);
         }
-        
+
         .dest-overlay {
             position: absolute;
             inset: 0;
@@ -361,7 +360,7 @@ html_content = '''<!DOCTYPE html>
             padding: 35px;
             color: white;
         }
-        
+
         .dest-tag {
             display: inline-block;
             background: var(--accent);
@@ -373,33 +372,33 @@ html_content = '''<!DOCTYPE html>
             margin-bottom: 15px;
             width: fit-content;
         }
-        
+
         .dest-card h3 {
             font-size: 28px;
             font-weight: 900;
             margin-bottom: 10px;
         }
-        
+
         .dest-card p {
             font-size: 15px;
             opacity: 0.85;
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        
+
         .dest-meta {
             display: flex;
             gap: 20px;
             font-size: 13px;
             opacity: 0.8;
         }
-        
+
         .dest-meta span {
             display: flex;
             align-items: center;
             gap: 6px;
         }
-        
+
         .dest-arrow {
             position: absolute;
             top: 25px;
@@ -417,19 +416,19 @@ html_content = '''<!DOCTYPE html>
             transition: all 0.3s;
             border: 1px solid rgba(255,255,255,0.2);
         }
-        
+
         .dest-card:hover .dest-arrow {
             background: white;
             color: var(--primary);
             transform: rotate(-45deg);
         }
-        
+
         /* Features Section */
         .features-section {
             background: var(--light);
             padding: 100px 30px;
         }
-        
+
         .features-grid {
             max-width: 1400px;
             margin: 0 auto;
@@ -437,7 +436,7 @@ html_content = '''<!DOCTYPE html>
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
         }
-        
+
         .feature-card {
             background: white;
             padding: 40px 35px;
@@ -445,13 +444,13 @@ html_content = '''<!DOCTYPE html>
             transition: all 0.4s;
             border: 1px solid rgba(0,0,0,0.05);
         }
-        
+
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
             border-color: transparent;
         }
-        
+
         .feature-icon {
             width: 70px;
             height: 70px;
@@ -464,20 +463,20 @@ html_content = '''<!DOCTYPE html>
             font-size: 28px;
             margin-bottom: 25px;
         }
-        
+
         .feature-card h3 {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--dark);
         }
-        
+
         .feature-card p {
             color: var(--text-light);
             font-size: 15px;
             line-height: 1.7;
         }
-        
+
         /* About Section */
         .about-section {
             padding: 100px 30px;
@@ -488,12 +487,12 @@ html_content = '''<!DOCTYPE html>
             gap: 80px;
             align-items: center;
         }
-        
+
         .about-images {
             position: relative;
             height: 500px;
         }
-        
+
         .about-img-main {
             position: absolute;
             width: 70%;
@@ -503,7 +502,7 @@ html_content = '''<!DOCTYPE html>
             box-shadow: var(--shadow-lg);
             top: 0; left: 0;
         }
-        
+
         .about-img-sub {
             position: absolute;
             width: 50%;
@@ -514,7 +513,7 @@ html_content = '''<!DOCTYPE html>
             bottom: 0; right: 0;
             border: 5px solid white;
         }
-        
+
         .about-badge {
             position: absolute;
             bottom: 30px;
@@ -525,19 +524,19 @@ html_content = '''<!DOCTYPE html>
             box-shadow: var(--shadow);
             z-index: 3;
         }
-        
+
         .about-badge-number {
             font-size: 36px;
             font-weight: 900;
             color: var(--secondary);
             display: block;
         }
-        
+
         .about-badge-text {
             font-size: 14px;
             color: var(--text-light);
         }
-        
+
         .about-content h2 {
             font-size: 42px;
             font-weight: 900;
@@ -545,14 +544,14 @@ html_content = '''<!DOCTYPE html>
             margin-bottom: 25px;
             line-height: 1.2;
         }
-        
+
         .about-content p {
             color: var(--text-light);
             font-size: 16px;
             line-height: 1.8;
             margin-bottom: 20px;
         }
-        
+
         .about-quote {
             border-left: 4px solid var(--accent);
             padding-left: 25px;
@@ -562,14 +561,14 @@ html_content = '''<!DOCTYPE html>
             font-size: 18px;
             line-height: 1.8;
         }
-        
+
         .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-top: 30px;
         }
-        
+
         .about-feature-item {
             display: flex;
             align-items: center;
@@ -577,39 +576,39 @@ html_content = '''<!DOCTYPE html>
             font-weight: 600;
             color: var(--dark);
         }
-        
+
         .about-feature-item i {
             color: var(--primary);
             font-size: 18px;
         }
-        
+
         /* Testimonials */
         .testimonials-section {
             background: var(--dark);
             padding: 100px 30px;
             color: white;
         }
-        
+
         .testimonials-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .testimonials-section .section-title {
             color: white;
         }
-        
+
         .testimonials-section .section-subtitle {
             color: rgba(255,255,255,0.6);
         }
-        
+
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
-        
+
         .testimonial-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
@@ -618,31 +617,31 @@ html_content = '''<!DOCTYPE html>
             padding: 40px;
             transition: all 0.4s;
         }
-        
+
         .testimonial-card:hover {
             background: rgba(255,255,255,0.08);
             transform: translateY(-5px);
         }
-        
+
         .testimonial-stars {
             color: var(--accent);
             font-size: 16px;
             margin-bottom: 20px;
         }
-        
+
         .testimonial-text {
             font-size: 16px;
             line-height: 1.8;
             margin-bottom: 25px;
             opacity: 0.9;
         }
-        
+
         .testimonial-author {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .testimonial-avatar {
             width: 50px;
             height: 50px;
@@ -654,17 +653,17 @@ html_content = '''<!DOCTYPE html>
             font-weight: 700;
             color: white;
         }
-        
+
         .testimonial-info h4 {
             font-size: 16px;
             font-weight: 700;
         }
-        
+
         .testimonial-info p {
             font-size: 13px;
             opacity: 0.6;
         }
-        
+
         /* CTA Section */
         .cta-section {
             padding: 120px 30px;
@@ -674,7 +673,7 @@ html_content = '''<!DOCTYPE html>
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-section::before {
             content: '';
             position: absolute;
@@ -683,33 +682,33 @@ html_content = '''<!DOCTYPE html>
             background-size: 80px 80px;
             opacity: 0.5;
         }
-        
+
         .cta-content {
             position: relative;
             z-index: 2;
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .cta-section h2 {
             font-size: clamp(32px, 5vw, 52px);
             font-weight: 900;
             margin-bottom: 20px;
         }
-        
+
         .cta-section p {
             font-size: 18px;
             opacity: 0.9;
             margin-bottom: 40px;
         }
-        
+
         .cta-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .btn-white {
             background: white;
             color: var(--primary);
@@ -723,12 +722,12 @@ html_content = '''<!DOCTYPE html>
             align-items: center;
             gap: 10px;
         }
-        
+
         .btn-white:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
-        
+
         .btn-line {
             background: #06C755;
             color: white;
@@ -742,19 +741,19 @@ html_content = '''<!DOCTYPE html>
             align-items: center;
             gap: 10px;
         }
-        
+
         .btn-line:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(6,199,85,0.3);
         }
-        
+
         /* Footer */
         .footer {
             background: #0f0f1a;
             color: white;
             padding: 80px 30px 40px;
         }
-        
+
         .footer-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -762,29 +761,29 @@ html_content = '''<!DOCTYPE html>
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 60px;
         }
-        
+
         .footer-brand .logo-text {
             color: white;
             font-size: 28px;
         }
-        
+
         .footer-brand .logo-icon {
             background: white;
             color: var(--primary);
         }
-        
+
         .footer-desc {
             color: rgba(255,255,255,0.6);
             font-size: 15px;
             line-height: 1.8;
             margin: 25px 0;
         }
-        
+
         .footer-social {
             display: flex;
             gap: 15px;
         }
-        
+
         .footer-social a {
             width: 45px;
             height: 45px;
@@ -798,26 +797,26 @@ html_content = '''<!DOCTYPE html>
             transition: all 0.3s;
             font-size: 18px;
         }
-        
+
         .footer-social a:hover {
             background: var(--primary);
             transform: translateY(-3px);
         }
-        
+
         .footer-title {
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 25px;
         }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 15px;
         }
-        
+
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
@@ -827,11 +826,11 @@ html_content = '''<!DOCTYPE html>
             align-items: center;
             gap: 10px;
         }
-        
+
         .footer-links a:hover {
             color: white;
         }
-        
+
         .footer-contact-item {
             display: flex;
             align-items: flex-start;
@@ -840,13 +839,13 @@ html_content = '''<!DOCTYPE html>
             color: rgba(255,255,255,0.6);
             font-size: 15px;
         }
-        
+
         .footer-contact-item i {
             color: var(--accent);
             font-size: 18px;
             margin-top: 3px;
         }
-        
+
         .footer-bottom {
             max-width: 1400px;
             margin: 60px auto 0;
@@ -858,7 +857,7 @@ html_content = '''<!DOCTYPE html>
             color: rgba(255,255,255,0.4);
             font-size: 14px;
         }
-        
+
         /* Floating Line Button */
         .float-line {
             position: fixed;
@@ -880,17 +879,17 @@ html_content = '''<!DOCTYPE html>
             text-decoration: none;
             animation: pulse 2s infinite;
         }
-        
+
         .float-line:hover {
             transform: scale(1.1);
             box-shadow: 0 12px 35px rgba(6,199,85,0.5);
         }
-        
+
         @keyframes pulse {
             0%, 100% { box-shadow: 0 8px 25px rgba(6,199,85,0.4); }
             50% { box-shadow: 0 8px 35px rgba(6,199,85,0.6); }
         }
-        
+
         .float-line-tooltip {
             position: absolute;
             right: 75px;
@@ -907,13 +906,13 @@ html_content = '''<!DOCTYPE html>
             visibility: hidden;
             transition: all 0.3s;
         }
-        
+
         .float-line:hover .float-line-tooltip {
             opacity: 1;
             visibility: visible;
             right: 80px;
         }
-        
+
         /* Responsive */
         @media (max-width: 1024px) {
             .about-section {
@@ -923,7 +922,7 @@ html_content = '''<!DOCTYPE html>
             .about-images { height: 400px; }
             .footer-container { grid-template-columns: 1fr 1fr; }
         }
-        
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero-stats { display: none; }
@@ -936,29 +935,31 @@ html_content = '''<!DOCTYPE html>
             .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
             .about-features { grid-template-columns: 1fr; }
         }
-        
+
         /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .animate {
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
         }
-        
+
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
         .delay-4 { animation-delay: 0.4s; }
     </style>
+    <base href="./">
+    <base target="_blank">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="./index.html" class="logo">
                 <div class="logo-icon">hi</div>
                 <div>
                     <div class="logo-text">hi-gocn</div>
@@ -1018,7 +1019,7 @@ html_content = '''<!DOCTYPE html>
             <p class="section-subtitle">从繁华都市到秘境山水，从千年古迹到民俗烟火，每一条路线都经过精心打磨</p>
         </div>
         <div class="destinations-grid">
-            <a href="beijing.html" class="dest-card">
+            <a href="./beijing.html" class="dest-card">
                 <img src="https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=800&q=80" alt="北京">
                 <div class="dest-overlay">
                     <div class="dest-tag">皇家古韵</div>
@@ -1031,7 +1032,7 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="dest-arrow"><i class="fas fa-arrow-right"></i></div>
             </a>
-            <a href="harbin.html" class="dest-card">
+            <a href="./harbin.html" class="dest-card">
                 <img src="https://images.unsplash.com/photo-1548266652-99cf27701ced?w=800&q=80" alt="哈尔滨">
                 <div class="dest-overlay">
                     <div class="dest-tag">冰雪奇缘</div>
@@ -1044,7 +1045,7 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="dest-arrow"><i class="fas fa-arrow-right"></i></div>
             </a>
-            <a href="xinjiang.html" class="dest-card">
+            <a href="./xinjiang.html" class="dest-card">
                 <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80" alt="新疆">
                 <div class="dest-overlay">
                     <div class="dest-tag">西域秘境</div>
@@ -1057,7 +1058,7 @@ html_content = '''<!DOCTYPE html>
                 </div>
                 <div class="dest-arrow"><i class="fas fa-arrow-right"></i></div>
             </a>
-            <a href="huadong.html" class="dest-card">
+            <a href="./huadong.html" class="dest-card">
                 <img src="https://images.unsplash.com/photo-1537531383496-f4749b8032cf?w=800&q=80" alt="华东">
                 <div class="dest-overlay">
                     <div class="dest-tag">江南水乡</div>
@@ -1209,37 +1210,37 @@ html_content = '''<!DOCTYPE html>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <a href="#" class="logo">
+                <a href="./index.html" class="logo">
                     <div class="logo-icon">hi</div>
                     <div class="logo-text">hi-gocn</div>
                 </a>
                 <p class="footer-desc">专注为全球游客打造专属中国旅行体验，提供定制化大包、小包团及特色线路。从繁华都市到秘境山水，让每一位游客都能深度感受华夏大地的独特魅力。</p>
-                <div class="footer-social">
-                    <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" title="Line"><i class="fab fa-line"></i></a>
-                    <a href="https://wa.me/8613647332087" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:higocn.cs@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class   类="footer-title"   "footer-title">热门目的地</   & lt;h4>
+                <div class   类="footer-social">
+                    <a href="https://line.me/ti/p/26BZBUPHNP" target="_blank" title="Line"><i class="fab fa-line"></i></a><a   一个 href="https://line.me/ti/p/26BZBUPHNP"https://line.me/ti/p/26BZBUPHNP target="_blank" title="Line"><i   我 class   类   类="fab fa-line"   "fab fa-line"></   & lt;i></   & lt;a>
+                    <a href="https://wa.me/8613647332087" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a><a   一个 href="https://wa.me/8613647332087"https://wa.me/8613647332087 target="_blank" title="WhatsApp"><i   我 class   类   类="fab fa-whatsapp"></   & lt;i></   & lt;a>
+                    <a href="mailto:higocn.cs@gmail.com" title="Email"><i class="fas fa-envelope"></i></a><a   一个 href="mailto:higocn.cs@gmail.com""mailto:higocn.cs@gmail.com" title="Email"><i   我 class   类   类="fas fa-envelope"   "fas fa-envelope"></   & lt;i></   & lt;a>
+                </div>   < / div>
+            </div>   < / div>
+            <div>   < div>
+                <h4 class="footer-title">热门目的地</h4>< h4 class   类=" footer-title"   “footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title" > Popular Destinations /h4>
                 <ul class="footer-links">   <ul class   类="footer-links"   "footer-links">
-                    <li><a href="beijing.html"><i class="fas fa-chevron-right"></i> 北京旅游</a></li>< li> < a   一个 href=" beijing.html"   “beijing.html" > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> Beijing Travel /a> < /li>
-                    <li><a href="harbin.html"><i class="fas fa-chevron-right"></i> 哈尔滨旅游</a></li>< li> < a   一个 href=" harbin.html"   “harbin.html" > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> Harbin Tourism /a> < /li>
-                    <li><a href="xinjiang.html"><i class="fas fa-chevron-right"></i> 新疆旅游</a></li>< li> < a   一个 href=" xinjiang.html"   “xinjiang.html" > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> Xinjiang Tourism /a> < /li>
-                    <li><a href="huadong.html"><i class="fas fa-chevron-right"></i> 华东旅游</a></li>< li> < a   一个 href=" huadong.html"   “huadong.html" > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> East China Tourism /a> < /li>
-                </ul>
+                    <li><a href="./beijing.html"><i class="fas fa-chevron-right"></i> 北京旅游</a></li>
+                    <li><a href="./harbin.html"><i class="fas fa-chevron-right"></i> 哈尔滨旅游</a></li>
+                    <li><a href="./xinjiang.html"><i class="fas fa-chevron-right"></i> 新疆旅游</a></li>
+                    <li><a href="./huadong.html"><i class="fas fa-chevron-right"></i> 华东旅游</a></li>
+                </ul>   < / ul>
             </div>
             <div>   < div>
-                <h4 class="footer-title">服务项目</h4>< h4 class   类=" footer-title"   “footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title" > Service Items /h4>
+                <h4 class="footer-title">服务项目</h4>< h4 class   类=" footer-title"   “footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title" > Service Items /h4>
                 <ul class="footer-links">   <ul class   类="footer-links"   "footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> 定制旅行</a></li>< li> < a   一个 href=" #"   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”; > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> Customized Travel /a> < /li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> 小包团</a></li>< li> < a   一个 href=" #"   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”; > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> Small Group Tour /a> < /li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> 医疗旅游</a></li>< li> < a   一个 href=" #"   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”; > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> Medical Tourism /a> < /li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> 留学服务</a></li>< li> < a   一个 href=" #"   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”;   “#”; > < i   我 class   类   类=" fas fa-chevron-right"   " fas fa-chevron-right" > < /i> Study Abroad Services /a> < /li>
-                </ul>
+                    <li><a href="./index.html"><i class="fas fa-chevron-right"></i> 定制旅行</a></li>
+                    <li><a href="./index.html"><i class="fas fa-chevron-right"></i> 小包团</a></li>
+                    <li><a href="./index.html"><i class="fas fa-chevron-right"></i> 医疗旅游</a></li>
+                    <li><a href="./index.html"><i class="fas fa-chevron-right"></i> 留学服务</a></li>
+                </ul>   < / ul>
             </div>
             <div>   < div>
-                <h4 class="footer-title">联系我们</h4>< h4 class   类=" footer-title"   “footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title" > Contact Us /h4>
+                <h4 class="footer-title">联系我们</h4>< h4 class   类=" footer-title"   “footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title   “没有,footer-title" > Contact Us /h4>
                 <div class="footer-contact-item"><div class   类="footer-contact-item"   "footer-contact-item">
                     <i class="fas fa-map-marker-alt"></i><i   我 class   类   类="fas fa-map-marker-alt"   "fas fa-map-marker-alt"></   & lt;i>
                     <span>深圳市南山区科技园南区<br>高新南一道008号创维大厦</span>
@@ -1269,11 +1270,5 @@ html_content = '''<!DOCTYPE html>
         <i class="fab fa-line"></i><i   我 class   类   类="fab fa-line"   "fab fa-line"></   & lt;i>
         <span class="float-line-tooltip">Line 咨询客服</span>< span   跨度 class   类   类=" float-line-tooltip"   浮动线提示 > Line Customer Service < /span>
     </a>
-</body>
-</html>'''   < / html> "
-
-with open('/mnt/agents/output/index.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("✅ index.html created successfully")print("✅ index.html 创建
-print(f"File size: {len(html_content)} characters")print(f"文件大小：{len(html_content)} 
+</body>   < / body>
+</html>
